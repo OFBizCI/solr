@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.solr.webapp;
+package org.apache.ofbiz.solr.webapp;
 
 import java.io.IOException;
 
@@ -26,10 +26,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.solr.servlet.RedirectServlet;
-import org.ofbiz.base.util.UtilValidate;
-import org.ofbiz.entity.GenericValue;
-import org.ofbiz.security.Security;
-import org.ofbiz.webapp.control.LoginWorker;
+import org.apache.ofbiz.base.util.UtilValidate;
+import org.apache.ofbiz.entity.GenericValue;
+import org.apache.ofbiz.security.Security;
+import org.apache.ofbiz.webapp.control.LoginWorker;
 
 /**
  * OFBizSolrRedirectServlet.java - Master servlet for the ofbiz-solr application.

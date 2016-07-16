@@ -16,9 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.solr.webapp;
+package org.apache.ofbiz.solr.webapp;
 
-import static org.ofbiz.base.util.UtilGenerics.checkMap;
+import static org.apache.ofbiz.base.util.UtilGenerics.checkMap;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -44,31 +44,31 @@ import org.apache.solr.common.SolrException;
 import org.apache.solr.core.CoreContainer;
 import org.apache.solr.core.NodeConfig;
 import org.apache.solr.servlet.SolrDispatchFilter;
-import org.ofbiz.base.conversion.ConversionException;
-import org.ofbiz.base.conversion.JSONConverters.MapToJSON;
-import org.ofbiz.base.lang.JSON;
-import org.ofbiz.base.util.Debug;
-import org.ofbiz.base.util.StringUtil;
-import org.ofbiz.base.util.UtilGenerics;
-import org.ofbiz.base.util.UtilHttp;
-import org.ofbiz.base.util.UtilMisc;
-import org.ofbiz.base.util.UtilObject;
-import org.ofbiz.base.util.UtilTimer;
-import org.ofbiz.base.util.UtilValidate;
-import org.ofbiz.entity.Delegator;
-import org.ofbiz.entity.DelegatorFactory;
-import org.ofbiz.entity.GenericEntityException;
-import org.ofbiz.entity.GenericValue;
-import org.ofbiz.entity.util.EntityQuery;
-import org.ofbiz.entity.util.EntityUtil;
-import org.ofbiz.security.Security;
-import org.ofbiz.security.SecurityConfigurationException;
-import org.ofbiz.security.SecurityFactory;
-import org.ofbiz.service.LocalDispatcher;
-import org.ofbiz.service.ServiceContainer;
-import org.ofbiz.webapp.control.LoginWorker;
-import org.ofbiz.webapp.event.RequestBodyMapHandlerFactory;
-import org.ofbiz.webapp.website.WebSiteWorker;
+import org.apache.ofbiz.base.conversion.ConversionException;
+import org.apache.ofbiz.base.conversion.JSONConverters.MapToJSON;
+import org.apache.ofbiz.base.lang.JSON;
+import org.apache.ofbiz.base.util.Debug;
+import org.apache.ofbiz.base.util.StringUtil;
+import org.apache.ofbiz.base.util.UtilGenerics;
+import org.apache.ofbiz.base.util.UtilHttp;
+import org.apache.ofbiz.base.util.UtilMisc;
+import org.apache.ofbiz.base.util.UtilObject;
+import org.apache.ofbiz.base.util.UtilTimer;
+import org.apache.ofbiz.base.util.UtilValidate;
+import org.apache.ofbiz.entity.Delegator;
+import org.apache.ofbiz.entity.DelegatorFactory;
+import org.apache.ofbiz.entity.GenericEntityException;
+import org.apache.ofbiz.entity.GenericValue;
+import org.apache.ofbiz.entity.util.EntityQuery;
+import org.apache.ofbiz.entity.util.EntityUtil;
+import org.apache.ofbiz.security.Security;
+import org.apache.ofbiz.security.SecurityConfigurationException;
+import org.apache.ofbiz.security.SecurityFactory;
+import org.apache.ofbiz.service.LocalDispatcher;
+import org.apache.ofbiz.service.ServiceContainer;
+import org.apache.ofbiz.webapp.control.LoginWorker;
+import org.apache.ofbiz.webapp.event.RequestBodyMapHandlerFactory;
+import org.apache.ofbiz.webapp.website.WebSiteWorker;
 
 /**
  * ContextFilter - Restricts access to raw files and configures servlet objects.
@@ -453,7 +453,7 @@ public class OFBizSolrContextFilter extends SolrDispatchFilter {
                 // if tenant was specified, replace delegator with the new per-tenant delegator and set tenantId to session attribute
                 Delegator delegator = getDelegator(config.getServletContext());
 
-                //Use base delegator for fetching data from entity of entityGroup org.ofbiz.tenant 
+                //Use base delegator for fetching data from entity of entityGroup org.apache.ofbiz.tenant
                 Delegator baseDelegator = DelegatorFactory.getDelegator(delegator.getDelegatorBaseName());
                 GenericValue tenantDomainName = EntityQuery.use(baseDelegator).from("TenantDomainName").where("domainName", serverName).queryOne();
                 String tenantId = null;

@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  *******************************************************************************/
-package org.ofbiz.solr.control;
+package org.apache.ofbiz.solr.control;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.ofbiz.base.util.Debug;
-import org.ofbiz.webapp.control.LoginWorker;
+import org.apache.ofbiz.base.util.Debug;
+import org.apache.ofbiz.webapp.control.LoginWorker;
 
 /**
  * OFBiz Solr Login Workers
